@@ -1,228 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vishwas JK | Cybersecurity Portfolio</title>
-<style>
-:root {
-  --bg: #080d18;
-  --card: #111c2e;
-  --accent: #38bdf8;
-  --text: #e5edf7;
-  --muted: #9aabc0;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-}
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: #080d18ee;
-  border-bottom: 1px solid #23334a;
-  padding: 16px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.logo { color: var(--accent); font-size: 21px; font-weight: bold; }
-nav { display: flex; gap: 20px; flex-wrap: wrap; }
-nav a, a { color: var(--accent); text-decoration: none; }
-nav a { color: var(--text); font-size: 14px; }
-nav a:hover, a:hover { color: white; }
-section { padding: 75px 9%; scroll-margin-top: 70px; }
-.hero {
-  min-height: 490px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: radial-gradient(ellipse at top right, #123653, transparent 60%);
-}
-.tag { color: var(--accent); font-weight: bold; letter-spacing: 2px; }
-h1 { font-size: clamp(38px, 7vw, 65px); line-height: 1.15; margin: 15px 0; }
-h2 { font-size: 30px; margin-bottom: 25px; }
-h3 { color: var(--accent); margin-bottom: 10px; }
-p { color: var(--muted); margin-bottom: 14px; }
-.hero p { max-width: 680px; font-size: 18px; }
-.btn {
-  display: inline-block;
-  background: var(--accent);
-  color: #06111c;
-  padding: 11px 20px;
-  border-radius: 7px;
-  font-weight: bold;
-  margin: 10px 10px 0 0;
-}
-.btn.secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-.card {
-  background: var(--card);
-  border: 1px solid #263950;
-  border-radius: 12px;
-  padding: 23px;
-}
-.card p { margin-top: 8px; }
-.skills { display: flex; flex-wrap: wrap; gap: 10px; }
-.skills span {
-  background: #142b40;
-  color: #8edcff;
-  border: 1px solid #28516b;
-  border-radius: 20px;
-  padding: 7px 13px;
-  font-size: 14px;
-}
-.highlight { color: var(--accent); font-weight: bold; }
-footer {
-  text-align: center;
-  padding: 28px;
-  border-top: 1px solid #263950;
-  color: var(--muted);
-}
-@media(max-width:600px) {
-  header { padding: 14px 5%; }
-  nav { gap: 12px; }
-  section { padding: 55px 6%; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vishwas JK - Junior SOC Analyst and Cybersecurity Portfolio">
+  <title>Vishwas JK | Cybersecurity Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --surface: #101e30;
+      --surface-light: #172b42;
+      --accent: #38bdf8;
+      --accent2: #22d3ee;
+      --text: #e5edf7;
+      --muted: #9aabc0;
+      --border: #263b52;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent2);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 17, 31, 0.96);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--accent);
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 0;
+      color: var(--text);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 75px 24px;
+      scroll-margin-top: 65px;
+    }
+
+    .hero {
+      min-height: 510px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 85% 25%, #123d60 0, transparent 38%);
+    }
+
+    .eyebrow {
+      color: var(--accent2);
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1.15;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero h3 {
+      color: var(--accent2);
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 7px;
+      background: var(--accent);
+      color: #06111f;
+      font-weight: bold;
+      border: 1px solid var(--accent);
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--accent2);
+      color: #06111f;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: 30px;
+      margin-bottom: 28px;
+    }
+
+    .section-title span {
+      color: var(--accent);
+    }
+
+    .about-text {
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      color: var(--accent);
+      margin-bottom: 13px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .card strong {
+      color: var(--text);
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      padding: 9px 15px;
+      border-radius: 7px;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .achievement {
+      border-left: 3px solid var(--accent);
+    }
+
+    .contact-card {
+      text-align: center;
+      background: linear-gradient(135deg, #102b45, #101e30);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+    }
+
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: var(--surface);
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 55px 20px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">VISHWAS JK.</div>
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#achievements">Achievements</a>
-    <a href="#contact">Contact</a>
+    <a href="#home" class="logo">VISHWAS JK.</a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation">☰</button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="tag">CYBERSECURITY PORTFOLIO</div>
-  <h1>Hi, I'm <span class="highlight">Vishwas JK</span></h1>
-  <h3>Aspiring Junior SOC Analyst</h3>
-  <p>
-    Computer Science and Engineering graduate specializing in
-    IoT and Cybersecurity. Interested in Security Operations,
-    SIEM, threat detection, security monitoring and incident investigation.
-  </p>
-  <div>
-    <a class="btn" href="#projects">Explore My Projects</a>
-    <a class="btn secondary" href="#contact">Contact Me</a>
-  </div>
-</section>
+<main>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a cybersecurity enthusiast developing practical skills
-    in Security Operations Center (SOC) activities through
-    hands-on projects and cybersecurity labs.
-  </p>
-  <p>
-    I have worked with Wazuh, Splunk Enterprise, Linux and Windows
-    security events, focusing on log monitoring, authentication
-    event analysis, alert investigation and endpoint monitoring.
-  </p>
-</section>
+  <section class="hero" id="home">
+    <div class="eyebrow">CYBERSECURITY PORTFOLIO</div>
 
-<section id="projects">
-  <h2>Featured Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Virtual SOC Implementation Using Wazuh and Splunk</h3>
-      <p>
-        Implemented a virtual SOC lab using Wazuh and Splunk
-        Enterprise in Oracle VirtualBox.
-      </p>
-      <p>
-        Configured Ubuntu and Windows agents for endpoint monitoring
-        and integrated Splunk Universal Forwarder to forward
-        Wazuh security alerts.
-      </p>
-      <p>
-        Performed controlled failed SSH and Windows login
-        simulations, analyzed authentication events and created
-        a centralized Splunk dashboard.
-      </p>
-      <p><strong>Tools:</strong> Wazuh, Splunk Enterprise,
-      Universal Forwarder, Kali Linux, Ubuntu, Windows, VirtualBox</p>
-    </div>
+    <h1>Hi, I'm <span>Vishwas JK</span></h1>
 
-    <div class="card">
-      <h3>TryHackMe Practical Security Labs</h3>
-      <p>
-        Completed hands-on cybersecurity rooms covering
-        networking, Linux, security fundamentals, OSINT and
-        practical security investigation.
-      </p>
-      <p>
-        Practised security concepts through guided labs and
-        practical exercises.
-      </p>
-      <p><strong>Platform:</strong> TryHackMe</p>
-      <a href="https://tryhackme.com/p/Vishwas.JK" target="_blank">
-        View TryHackMe Profile →
-      </a>
-    </div>
-  </div>
-</section>
+    <h3>Aspiring Junior SOC Analyst</h3>
 
-<section id="skills">
-  <h2>Technical Skills</h2>
-  <div class="skills">
-    <span>Wazuh</span>
-    <span>Splunk Enterprise</span>
-    <span>Splunk Universal Forwarder</span>
-    <span>SIEM</span>
-    <span>Security Monitoring</span>
-    <span>Threat Detection</span>
-    <span>Log Analysis</span>
-    <span>Linux</span>
-    <span>Windows</span>
-    <span>Kali Linux</span>
-    <span>SSH</span>
-    <span>RDP</span>
-    <span>Oracle VirtualBox</span>
-    <span>Networking Fundamentals</span>
-  </div>
-</section>
-
-<section id="achievements">
-  <h2>Achievements</h2>
-  <div class="card">
-    <h3>TryHackMe – Top 15%</h3>
     <p>
-      Ranked in the top 15% on TryHackMe through hands-on
-      cybersecurity learning and practical lab activities.
+      Computer Science and Engineering graduate specializing in
+      IoT and Cybersecurity. Interested in Security Operations,
+      SIEM, threat detection, security monitoring and incident
+      investigation.
     </p>
-    <a href="https://tryhackme.com/p/Vishwas.JK" target="_blank">
-      View My Profile →
-    </a>
-  </div>
-</section>
 
-<section id="contact">
-  <h2>Let's Connect</h2>
-  <p>I'm interested in entry-level SOC Analyst and cybersecurity opportunities.</p>
-  <p>Email: <a href="mailto:vishwas.jk1124@gmail.com">vishwas.jk1124@gmail.com</a></p>
-  <p>GitHub: <a href="https://github.com/Vishwas12777" target="_blank">github.com/Vishwas12777</a></p>
-  <p>TryHackMe: <a href="https://tryhackme.com/p/Vishwas.JK" target="_blank">My TryHackMe Profile</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/vishwas-jk-489a0030a/" target="_blank">My LinkedIn Profile</a></p>
-</section>
+    <div class="buttons">
+      <a class="btn" href="#projects">Explore My Projects</a>
+      <a class="btn btn-outline" href="#contact">Contact Me</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+
+    <p class="about-text">
+      I am a cybersecurity enthusiast developing practical skills
+      in Security Operations Center (SOC) activities through
+      hands-on projects and cybersecurity labs. I have worked with
+      Wazuh, Splunk Enterprise, Linux, Windows security events
+      and log analysis. My goal is to build strong technical
+      foundations in threat detection, alert investigation and
+      endpoint monitoring.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>Virtual SOC Implementation Using Wazuh and Splunk</h3>
+
+        <p>
+          Implemented a virtual SOC lab using Wazuh and Splunk
+          Enterprise in Oracle VirtualBox.
+        </p>
+
+        <p>
+          Configured Ubuntu and Windows agents for endpoint
+          monitoring and integrated Splunk Universal Forwarder
+          to forward Wazuh security alerts.
+        </p>
+
+        <p>
+          Performed controlled failed SSH and Windows login
+          simulations, analyzed authentication events and
+          created a centralized Splunk dashboard.
+        </p>
+
+        <p>
+          <strong>Tools:</strong> Wazuh, Splunk Enterprise,
+          Universal Forwarder, Kali Linux, Ubuntu, Windows,
+          VirtualBox.
+        </p>
+
+        <div class="project-links">
+          <a href="pro_Virtual-SOC.pdf" target="_blank"
+             rel="noopener">View Project Report (PDF) ↗</a>
+          <a href="pro_Virtual-SOC.pdf" download>
+            Download Report ↓
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>TryHackMe Practical Security Labs</h3>
+
+        <p>
+          Completed hands-on cybersecurity rooms covering
+          networking, Linux, security fundamentals, OSINT
+          and practical security investigation.
+        </p>
+
+        <p>
+          Practised security concepts through guided labs
+          and practical challenges.
+        </p>
+
+        <p><strong>Platform:</strong> TryHackMe</p>
+
+        <div class="project-links">
+          <a href="https://tryhackme.com/p/Vishwas.JK"
+             target="_blank" rel="noopener">
+            View TryHackMe Profile ↗
+          </a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Security Monitoring and Log Analysis</h3>
+
+        <p>
+          Practised security monitoring using Wazuh and Splunk,
+          reviewed endpoint events and investigated authentication
+          alerts in a controlled virtual lab environment.
+        </p>
+
+        <p>
+          <strong>Tools:</strong> Wazuh, Splunk, Linux,
+          Windows Event Logs.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+
+    <div class="skills">
+      <span class="skill">Wazuh</span>
+      <span class="skill">Splunk Enterprise</span>
+      <span class="skill">SIEM Monitoring</span>
+      <span class="skill">Log Analysis</span>
+      <span class="skill">Alert Investigation</span>
+      <span class="skill">Linux</span>
+      <span class="skill">Windows</span>
+      <span class="skill">Kali Linux</span>
+      <span class="skill">VirtualBox</span>
+      <span class="skill">Networking Fundamentals</span>
+      <span class="skill">Burp Suite</span>
+      <span class="skill">Nmap</span>
+      <span class="skill">Incident Investigation</span>
+      <span class="skill">Splunk Universal Forwarder</span>
+    </div>
+
+    <h2 class="section-title" style="margin-top:40px">
+      Professional <span>Skills</span>
+    </h2>
+
+    <div class="skills">
+      <span class="skill">Problem Solving</span>
+      <span class="skill">Analytical Thinking</span>
+      <span class="skill">Communication</span>
+      <span class="skill">Teamwork</span>
+      <span class="skill">Continuous Learning</span>
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2 class="section-title">Learning & <span>Achievements</span></h2>
+
+    <div class="grid">
+
+      <div class="card achievement">
+        <h3>TryHackMe</h3>
+        <p>
+          Ranked in the top 15% on TryHackMe through
+          practical cybersecurity learning and lab activities.
+        </p>
+        <a href="https://tryhackme.com/p/Vishwas.JK"
+           target="_blank" rel="noopener">
+          View Profile ↗
+        </a>
+      </div>
+
+      <div class="card achievement">
+        <h3>Hands-on SOC Lab</h3>
+        <p>
+          Built a virtual SOC environment integrating
+          Wazuh monitoring with Splunk security analytics.
+        </p>
+        <a href="pro_Virtual-SOC.pdf" target="_blank"
+           rel="noopener">View Project Report ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+
+    <div class="card contact-card">
+      <h3>Let's Connect</h3>
+
+      <p>
+        I am interested in Junior SOC Analyst and
+        entry-level cybersecurity opportunities.
+      </p>
+
+      <div class="project-links" style="justify-content:center">
+        <a href="mailto:vishwasjk1124@gmail.com">
+          Email Me ↗
+        </a>
+
+        <a href="https://github.com/Vishwas12777"
+           target="_blank" rel="noopener">
+          GitHub ↗
+        </a>
+
+        <a href="https://tryhackme.com/p/Vishwas.JK"
+           target="_blank" rel="noopener">
+          TryHackMe ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-  © 2026 Vishwas JK | Cybersecurity Portfolio
+  <p>© <span id="year"></span> Vishwas JK. Cybersecurity Portfolio.</p>
+  <p>Built with HTML, CSS and JavaScript.</p>
 </footer>
+
+<script>
+  // Mobile navigation menu
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Close menu after selecting a section
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+
+  // Automatically update copyright year
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
 
 </body>
 </html>
