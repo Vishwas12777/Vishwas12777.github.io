@@ -3,116 +3,199 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vishwas JK - Junior SOC Analyst and Cybersecurity Portfolio">
+  <meta name="theme-color" content="#080e19">
+  <meta name="description" content="Vishwas JK | Cybersecurity Portfolio. Junior SOC Analyst, SIEM, Wazuh, Splunk, Threat Hunting and Security Assessments.">
+  <meta name="author" content="Vishwas JK">
   <title>Vishwas JK | Cybersecurity Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #07111f;
-      --surface: #101e30;
-      --surface-light: #172b42;
+      --bg: #080e19;
+      --surface: #101a2a;
+      --surface2: #142237;
       --accent: #38bdf8;
-      --accent2: #22d3ee;
-      --text: #e5edf7;
-      --muted: #9aabc0;
-      --border: #263b52;
+      --accent2: #67e8f9;
+      --text: #edf4fc;
+      --muted: #9aaabe;
+      --border: #25364b;
+      --success: #4ade80;
+      --max: 1160px;
     }
 
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 85px;
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: "Inter", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
-      color: var(--accent);
+      color: inherit;
       text-decoration: none;
     }
 
-    a:hover {
-      color: var(--accent2);
+    button, input {
+      font: inherit;
     }
+
+    button {
+      cursor: pointer;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #07111d;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 44px));
+      margin: auto;
+    }
+
+    .mono {
+      font-family: "DM Mono", monospace;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* NAVIGATION */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(7, 17, 31, 0.96);
-      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      background: rgba(8, 14, 25, .93);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(56, 189, 248, .13);
     }
 
     nav {
-      max-width: 1100px;
-      margin: auto;
-      padding: 16px 24px;
+      min-height: 76px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
     .logo {
-      color: var(--accent);
       font-size: 21px;
-      font-weight: bold;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--accent);
     }
 
     .nav-links {
       display: flex;
-      gap: 22px;
       list-style: none;
+      align-items: center;
+      gap: 25px;
     }
 
     .nav-links a {
-      color: var(--text);
-      font-size: 14px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    .nav-cta {
+      border: 1px solid var(--accent);
+      color: var(--accent) !important;
+      padding: 9px 15px;
+      border-radius: 7px;
     }
 
     .menu-toggle {
       display: none;
-      background: none;
-      border: 0;
+      background: transparent;
       color: var(--text);
-      font-size: 25px;
-      cursor: pointer;
+      border: 0;
+      font-size: 26px;
     }
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 75px 24px;
-      scroll-margin-top: 65px;
-    }
+    /* HERO */
 
     .hero {
-      min-height: 510px;
+      min-height: 660px;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
       background:
-        radial-gradient(circle at 85% 25%, #123d60 0, transparent 38%);
+        radial-gradient(ellipse at 80% 35%, rgba(14, 116, 144, .19), transparent 45%),
+        radial-gradient(ellipse at 5% 90%, rgba(37, 99, 235, .10), transparent 40%);
+    }
+
+    .hero-content {
+      padding-top: 65px;
+      padding-bottom: 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 13px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(16, 26, 42, .8);
+      color: #b7c8d9;
+      font-size: 12px;
+      margin-bottom: 30px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--success);
     }
 
     .eyebrow {
-      color: var(--accent2);
-      font-size: 13px;
+      font-family: "DM Mono", monospace;
+      color: var(--accent);
+      font-size: 12px;
       letter-spacing: 3px;
-      font-weight: bold;
+      text-transform: uppercase;
     }
 
     h1 {
-      font-size: clamp(38px, 7vw, 64px);
-      line-height: 1.15;
+      font-size: clamp(43px, 7vw, 76px);
+      letter-spacing: -3px;
+      line-height: 1.12;
       margin: 18px 0;
     }
 
@@ -120,136 +203,599 @@
       color: var(--accent);
     }
 
-    .hero h3 {
-      color: var(--accent2);
-      margin-bottom: 14px;
+    .hero-role {
+      font-size: clamp(18px, 3vw, 25px);
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: #d4e4f4;
     }
 
-    .hero p {
-      max-width: 650px;
+    .hero-description {
+      max-width: 680px;
       color: var(--muted);
+      font-size: 15px;
+      line-height: 1.9;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
-      margin-top: 25px;
+      gap: 13px;
+      margin-top: 30px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 11px 20px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 20px;
       border-radius: 7px;
       background: var(--accent);
-      color: #06111f;
-      font-weight: bold;
+      color: #06111e;
+      font-size: 13px;
+      font-weight: 800;
       border: 1px solid var(--accent);
-      transition: 0.2s;
+      transition: .25s;
     }
 
     .btn:hover {
       background: var(--accent2);
-      color: #06111f;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      color: #06111e;
     }
 
     .btn-outline {
       background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .btn-outline:hover {
       color: var(--accent);
+      background: var(--surface);
+      border-color: var(--accent);
+    }
+
+    .hero-socials {
+      display: flex;
+      gap: 22px;
+      margin-top: 38px;
+      flex-wrap: wrap;
+    }
+
+    .hero-socials a {
+      font-size: 13px;
+      color: var(--muted);
+      transition: .2s;
+    }
+
+    .hero-socials a:hover {
+      color: var(--accent);
+    }
+
+    .hero-decoration {
+      position: absolute;
+      right: 5%;
+      top: 25%;
+      width: 280px;
+      height: 280px;
+      border: 1px solid rgba(56, 189, 248, .13);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(56, 189, 248, .025),
+        0 0 0 70px rgba(56, 189, 248, .018);
+      pointer-events: none;
+    }
+
+    /* SECTION COMMON */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+    }
+
+    .section-heading .eyebrow {
+      display: block;
+      margin-bottom: 10px;
     }
 
     .section-title {
-      font-size: 30px;
-      margin-bottom: 28px;
+      font-size: clamp(28px, 4vw, 39px);
+      letter-spacing: -1.3px;
+      line-height: 1.3;
     }
 
-    .section-title span {
-      color: var(--accent);
+    .section-description {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 680px;
+      margin-top: 12px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 45px;
+      align-items: start;
     }
 
     .about-text {
       color: var(--muted);
-      max-width: 850px;
+      font-size: 14px;
+      line-height: 2;
     }
 
-    .grid {
+    .education-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .education-card h3 {
+      color: var(--accent);
+      font-size: 17px;
+      margin-bottom: 15px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 8px 0;
+    }
+
+    .education-card strong {
+      color: var(--text);
+    }
+
+    .education-badge {
+      display: inline-block;
+      margin-top: 12px;
+      background: rgba(56, 189, 248, .10);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, .25);
+      padding: 6px 11px;
+      font-size: 11px;
+      border-radius: 20px;
+    }
+
+    /* HIGHLIGHTS */
+
+    .highlights {
+      padding: 10px 0 65px;
+    }
+
+    .highlight-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .highlight {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 23px;
+      border-radius: 11px;
+    }
+
+    .highlight .number {
+      font-size: 26px;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .highlight p {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* PROJECTS */
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 24px;
-      transition: 0.25s;
+      border-radius: 13px;
+      padding: 25px;
+      transition: .25s;
+      min-width: 0;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent);
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, .6);
+      box-shadow: 0 14px 35px rgba(0, 0, 0, .15);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 17px;
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 9px;
+      color: var(--accent);
+      background: rgba(56, 189, 248, .10);
+      font-size: 20px;
+    }
+
+    .project-type {
+      color: var(--accent2);
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .card h3 {
-      color: var(--accent);
-      margin-bottom: 13px;
-      font-size: 19px;
+      font-size: 18px;
+      margin-bottom: 12px;
     }
 
     .card p {
       color: var(--muted);
+      font-size: 13px;
       margin-bottom: 12px;
-      font-size: 14px;
+      line-height: 1.8;
     }
 
     .card strong {
       color: var(--text);
     }
 
-    .project-links {
+    .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 18px;
-      font-weight: bold;
-      font-size: 14px;
+      gap: 7px;
+      margin-top: 17px;
+    }
+
+    .tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 5px 9px;
+      color: #b8ccdf;
+      font-size: 10px;
+    }
+
+    .card-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 22px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .card-links a {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .card-links a:hover {
+      color: var(--accent2);
+    }
+
+    /* ASSESSMENT LIBRARY */
+
+    .assessment-toolbar {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .search-box {
+      flex: 1;
+      min-width: 220px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 12px 15px;
+      color: var(--text);
+      outline: none;
+      font-size: 13px;
+    }
+
+    .search-box:focus {
+      border-color: var(--accent);
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      border-radius: 7px;
+      font-size: 11px;
+      transition: .2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: rgba(56, 189, 248, .12);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .assessment-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .assessment-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 17px;
+      display: flex;
+      flex-direction: column;
+      min-height: 175px;
+      transition: .2s;
+    }
+
+    .assessment-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .assessment-card[hidden] {
+      display: none;
+    }
+
+    .file-label {
+      color: var(--accent);
+      font-size: 10px;
+      font-family: "DM Mono", monospace;
+      margin-bottom: 10px;
+    }
+
+    .assessment-card h3 {
+      font-size: 13px;
+      line-height: 1.6;
+      margin-bottom: 7px;
+    }
+
+    .assessment-card p {
+      color: var(--muted);
+      font-size: 11px;
+      margin-bottom: 15px;
+    }
+
+    .assessment-links {
+      margin-top: auto;
+      display: flex;
+      gap: 14px;
+    }
+
+    .assessment-links a {
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .assessment-links a:hover {
+      color: var(--accent2);
+    }
+
+    .no-results {
+      display: none;
+      color: var(--muted);
+      padding: 25px 0;
+      font-size: 13px;
+    }
+
+    .no-results.show {
+      display: block;
+    }
+
+    /* SKILLS */
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+    }
+
+    .skill-group h3 {
+      font-size: 16px;
+      margin-bottom: 18px;
+      color: var(--accent);
     }
 
     .skills {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 9px;
     }
 
     .skill {
-      background: var(--surface-light);
+      background: var(--surface2);
       border: 1px solid var(--border);
-      padding: 9px 15px;
-      border-radius: 7px;
-      color: var(--text);
-      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #d0deed;
     }
 
-    .achievement {
+    /* LEARNING */
+
+    .learning-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-left: 3px solid var(--accent);
+      border-radius: 10px;
+      padding: 23px;
+    }
+
+    .learning-card h3 {
+      font-size: 16px;
+      margin-bottom: 9px;
+    }
+
+    .learning-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 13px;
+    }
+
+    .learning-card a {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 17px;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      padding-bottom: 100px;
     }
 
     .contact-card {
       text-align: center;
-      background: linear-gradient(135deg, #102b45, #101e30);
+      padding: 50px 25px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(56, 189, 248, .12), transparent 65%),
+        var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
     }
+
+    .contact-card h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      font-size: 13px;
+      max-width: 570px;
+      margin: auto;
+    }
+
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .social-link {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      border-radius: 7px;
+      padding: 11px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      transition: .2s;
+    }
+
+    .social-link:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
 
     footer {
-      text-align: center;
-      padding: 25px;
-      color: var(--muted);
       border-top: 1px solid var(--border);
-      font-size: 13px;
+      padding: 25px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 11px;
     }
 
-    @media (max-width: 700px) {
+    footer a {
+      color: var(--accent);
+    }
+
+    /* SCROLL TOP */
+
+    .back-top {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 500;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--accent);
+      border-radius: 8px;
+      display: none;
+      font-size: 20px;
+    }
+
+    .back-top.show {
+      display: block;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .assessment-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-decoration {
+        opacity: .35;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 32px, var(--max));
+      }
+
+      nav {
+        min-height: 68px;
+      }
+
       .menu-toggle {
         display: block;
       }
@@ -257,25 +803,69 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 62px;
+        top: 68px;
         left: 0;
         width: 100%;
-        padding: 20px;
-        background: var(--surface);
+        background: #101a2a;
+        padding: 20px 25px;
+        border-bottom: 1px solid var(--border);
         flex-direction: column;
-        gap: 15px;
+        align-items: flex-start;
+        gap: 19px;
       }
 
-      .nav-links.active {
+      .nav-links.open {
         display: flex;
       }
 
-      .grid {
-        grid-template-columns: 1fr;
+      .hero {
+        min-height: 590px;
+      }
+
+      .hero-content {
+        padding-top: 65px;
+      }
+
+      h1 {
+        letter-spacing: -2px;
       }
 
       section {
-        padding: 55px 20px;
+        padding: 65px 0;
+      }
+
+      .about-grid,
+      .project-grid,
+      .skills-layout,
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .assessment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-decoration {
+        right: -130px;
+        top: 20%;
+      }
+
+      .contact-card h2 {
+        font-size: 25px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
       }
     }
   </style>
@@ -284,296 +874,127 @@
 <body>
 
 <header>
-  <nav>
-    <a href="#home" class="logo">VISHWAS JK.</a>
+  <nav class="container">
+    <a href="#home" class="logo">VISHWAS<span>.</span>JK</a>
 
     <button class="menu-toggle" id="menuToggle"
-      aria-label="Toggle navigation">☰</button>
+      aria-label="Open navigation" aria-expanded="false">
+      ☰
+    </button>
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#assessments">Assessments</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#achievements">Achievements</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
 
+  <!-- HERO -->
+
   <section class="hero" id="home">
-    <div class="eyebrow">CYBERSECURITY PORTFOLIO</div>
+    <div class="container hero-content">
 
-    <h1>Hi, I'm <span>Vishwas JK</span></h1>
-
-    <h3>Aspiring Junior SOC Analyst</h3>
-
-    <p>
-      Computer Science and Engineering graduate specializing in
-      IoT and Cybersecurity. Interested in Security Operations,
-      SIEM, threat detection, security monitoring and incident
-      investigation.
-    </p>
-
-    <div class="buttons">
-      <a class="btn" href="#projects">Explore My Projects</a>
-      <a class="btn btn-outline" href="#contact">Contact Me</a>
-    </div>
-  </section>
-
-  <section id="about">
-    <h2 class="section-title">About <span>Me</span></h2>
-
-    <p class="about-text">
-      I am a cybersecurity enthusiast developing practical skills
-      in Security Operations Center (SOC) activities through
-      hands-on projects and cybersecurity labs. I have worked with
-      Wazuh, Splunk Enterprise, Linux, Windows security events
-      and log analysis. My goal is to build strong technical
-      foundations in threat detection, alert investigation and
-      endpoint monitoring.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2 class="section-title">Featured <span>Projects</span></h2>
-
-    <div class="grid">
-
-      <div class="card">
-        <h3>Virtual SOC Implementation Using Wazuh and Splunk</h3>
-
-        <p>
-          Implemented a virtual SOC lab using Wazuh and Splunk
-          Enterprise in Oracle VirtualBox.
-        </p>
-
-        <p>
-          Configured Ubuntu and Windows agents for endpoint
-          monitoring and integrated Splunk Universal Forwarder
-          to forward Wazuh security alerts.
-        </p>
-
-        <p>
-          Performed controlled failed SSH and Windows login
-          simulations, analyzed authentication events and
-          created a centralized Splunk dashboard.
-        </p>
-
-        <p>
-          <strong>Tools:</strong> Wazuh, Splunk Enterprise,
-          Universal Forwarder, Kali Linux, Ubuntu, Windows,
-          VirtualBox.
-        </p>
-
-        <div class="project-links">
-          <a href="pro_Virtual-SOC.pdf" target="_blank"
-             rel="noopener">View Project Report (PDF) ↗</a>
-          <a href="pro_Virtual-SOC.pdf" download>
-            Download Report ↓
-          </a>
-        </div>
+      <div class="availability">
+        <span class="status-dot"></span>
+        Open to Entry-Level Cybersecurity Opportunities
       </div>
 
-      <div class="card">
-        <h3>TryHackMe Practical Security Labs</h3>
+      <div class="eyebrow">CYBERSECURITY PORTFOLIO / 2026</div>
 
-        <p>
-          Completed hands-on cybersecurity rooms covering
-          networking, Linux, security fundamentals, OSINT
-          and practical security investigation.
-        </p>
+      <h1>
+        Hi, I'm<br>
+        <span>Vishwas JK.</span>
+      </h1>
 
-        <p>
-          Practised security concepts through guided labs
-          and practical challenges.
-        </p>
-
-        <p><strong>Platform:</strong> TryHackMe</p>
-
-        <div class="project-links">
-          <a href="https://tryhackme.com/p/Vishwas.JK"
-             target="_blank" rel="noopener">
-            View TryHackMe Profile ↗
-          </a>
-        </div>
+      <div class="hero-role">
+        Aspiring Junior SOC Analyst
       </div>
 
-      <div class="card">
-        <h3>Security Monitoring and Log Analysis</h3>
-
-        <p>
-          Practised security monitoring using Wazuh and Splunk,
-          reviewed endpoint events and investigated authentication
-          alerts in a controlled virtual lab environment.
-        </p>
-
-        <p>
-          <strong>Tools:</strong> Wazuh, Splunk, Linux,
-          Windows Event Logs.
-        </p>
-      </div>
-
-    </div>
-  </section>
-<section id="activities">
-    <h2 class="section-title">Cybersecurity <span>Activities & Assessments</span></h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Web Application Security</h3>
-            <p>Completed practical assessments covering common web application vulnerabilities and security testing.</p>
-            <p><strong>Activities:</strong> SQL Injection, Cross-Site Scripting (XSS), IDOR, SSRF, Improper Session Management, Password Reset Testing and Admin Panel Assessment.</p>
-        </div>
-
-        <div class="card">
-            <h3>Network Security & Reconnaissance</h3>
-            <p>Performed network scanning, information gathering and network traffic analysis in controlled lab environments.</p>
-            <p><strong>Activities:</strong> Advanced Nmap, Information Gathering and Network Traffic Analysis.</p>
-        </div>
-
-        <div class="card">
-            <h3>Linux & Bash Scripting</h3>
-            <p>Practised Linux command-line operations, file management, permissions and basic scripting.</p>
-            <p><strong>Activities:</strong> Linux Permissions, File System Commands and Bash Scripting.</p>
-        </div>
-
-        <div class="card">
-            <h3>Vulnerability Assessment</h3>
-            <p>Performed practical vulnerability testing and explored application security weaknesses.</p>
-            <p><strong>Activities:</strong> Grey Box VAPT and Fuzzing.</p>
-        </div>
-
-        <div class="card">
-            <h3>Security Monitoring & Investigation</h3>
-            <p>Analysed security events, authentication activity and logs through hands-on investigation exercises.</p>
-            <p><strong>Activities:</strong> Log Analysis, Investigating an Attack and Capstone Project.</p>
-            <p><strong>Tools:</strong> Wazuh, Splunk, Linux and Windows Event Logs.</p>
-        </div>
-
-    </div>
-</section>
-  <section id="skills">
-    <h2 class="section-title">Technical <span>Skills</span></h2>
-
-    <div class="skills">
-      <span class="skill">Wazuh</span>
-      <span class="skill">Splunk Enterprise</span>
-      <span class="skill">SIEM Monitoring</span>
-      <span class="skill">Log Analysis</span>
-      <span class="skill">Alert Investigation</span>
-      <span class="skill">Linux</span>
-      <span class="skill">Windows</span>
-      <span class="skill">Kali Linux</span>
-      <span class="skill">VirtualBox</span>
-      <span class="skill">Networking Fundamentals</span>
-      <span class="skill">Burp Suite</span>
-      <span class="skill">Nmap</span>
-      <span class="skill">Incident Investigation</span>
-      <span class="skill">Splunk Universal Forwarder</span>
-    </div>
-
-    <h2 class="section-title" style="margin-top:40px">
-      Professional <span>Skills</span>
-    </h2>
-
-    <div class="skills">
-      <span class="skill">Problem Solving</span>
-      <span class="skill">Analytical Thinking</span>
-      <span class="skill">Communication</span>
-      <span class="skill">Teamwork</span>
-      <span class="skill">Continuous Learning</span>
-    </div>
-  </section>
-
-  <section id="achievements">
-    <h2 class="section-title">Learning & <span>Achievements</span></h2>
-
-    <div class="grid">
-
-      <div class="card achievement">
-        <h3>TryHackMe</h3>
-        <p>
-          Ranked in the top 15% on TryHackMe through
-          practical cybersecurity learning and lab activities.
-        </p>
-        <a href="https://tryhackme.com/p/Vishwas.JK"
-           target="_blank" rel="noopener">
-          View Profile ↗
-        </a>
-      </div>
-
-      <div class="card achievement">
-        <h3>Hands-on SOC Lab</h3>
-        <p>
-          Built a virtual SOC environment integrating
-          Wazuh monitoring with Splunk security analytics.
-        </p>
-        <a href="pro_Virtual-SOC.pdf" target="_blank"
-           rel="noopener">View Project Report ↗</a>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Get In <span>Touch</span></h2>
-
-    <div class="card contact-card">
-      <h3>Let's Connect</h3>
-
-      <p>
-        I am interested in Junior SOC Analyst and
-        entry-level cybersecurity opportunities.
+      <p class="hero-description">
+        Computer Science and Engineering graduate specializing
+        in IoT and Cyber Security. Building practical experience
+        in Security Operations, SIEM monitoring, security
+        investigation, threat hunting and vulnerability assessment
+        through hands-on labs and technical projects.
       </p>
 
-      <div class="project-links" style="justify-content:center">
-        <a href="mailto:vishwasjk1124@gmail.com">
-          Email Me ↗
+      <div class="hero-buttons">
+        <a href="#projects" class="btn">
+          Explore Projects ↗
         </a>
 
-        <a href="https://github.com/Vishwas12777"
-           target="_blank" rel="noopener">
-          GitHub ↗
-        </a>
-
-        <a href="https://tryhackme.com/p/Vishwas.JK"
-           target="_blank" rel="noopener">
-          TryHackMe ↗
+        <a href="#contact" class="btn btn-outline">
+          Get In Touch
         </a>
       </div>
+
+      <div class="hero-socials">
+        <a href="https://www.linkedin.com/in/vishwas-jk-489a0030a/"
+           target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+
+        <a href="https://github.com/Vishwas12777"
+           target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+
+        <a href="https://tryhackme.com/p/Vishwas.JK"
+           target="_blank" rel="noopener noreferrer">TryHackMe ↗</a>
+      </div>
+
     </div>
+
+    <div class="hero-decoration"></div>
   </section>
 
-</main>
+  <!-- HIGHLIGHTS -->
 
-<footer>
-  <p>© <span id="year"></span> Vishwas JK. Cybersecurity Portfolio.</p>
-  <p>Built with HTML, CSS and JavaScript.</p>
-</footer>
+  <div class="container highlights">
+    <div class="highlight-grid">
 
-<script>
-  // Mobile navigation menu
-  const menuToggle = document.getElementById("menuToggle");
-  const navLinks = document.getElementById("navLinks");
+      <div class="highlight">
+        <div class="number">SIEM</div>
+        <p>Security Monitoring & Log Analysis</p>
+      </div>
 
-  menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("active");
-  });
+      <div class="highlight">
+        <div class="number">SOC</div>
+        <p>Hands-on Virtual Security Lab</p>
+      </div>
 
-  // Close menu after selecting a section
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("active");
-    });
-  });
+      <div class="highlight">
+        <div class="number">VAPT</div>
+        <p>Practical Security Assessments</p>
+      </div>
 
-  // Automatically update copyright year
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-</script>
+    </div>
+  </div>
 
-</body>
-</html>
+  <!-- ABOUT -->
+
+  <section id="about">
+    <div class="container">
+
+      <div class="section-heading">
+        <span class="eyebrow">01 / INTRODUCTION</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+
+      <div class="about-grid">
+
+        <div class="about-text">
+          <p>
+            I am a Computer Science and Engineering graduate
+            with a specialization in IoT and Cyber Security,
+            including Blockchain Technology.
+          </p>
+
+          <br>
+
+          <p>
+            My cybersecurity learning journey focuses on
+            developing practical SOC skills through virtual
+            lab environments, TryHackMe exercises and
